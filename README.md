@@ -1,2 +1,65 @@
-# downgrafana
-Integrar dados de estado de alerta de empresas do site DownDetector(https://downdetector.com.br/) com o painel de visualização de dados do Grafana
+# Integração DownDetector x Grafana
+
+Autor: Murilo Scheffer
+Data: 30/08/2024
+
+## Descrição
+
+O projeto **Integração DownDetector x Grafana** visa integrar dados de estado de alerta de empresas do site [DownDetector](https://downdetector.com.br/) com o painel de visualização de dados do [Grafana](https://grafana.com/). Utilizando técnicas de web scraping, o script extrai informações sobre o status de alerta (danger ou warning)e armazena esses dados em um banco de dados PostgreSQL. O Grafana é então configurado para visualizar esses dados em um painel, oferecendo uma visão clara e organizada do estado de alerta atual.
+
+### Objetivo
+
+O objetivo deste projeto é fornecer uma solução automatizada para monitorar e visualizar o estado de alerta das empresas listadas no DownDetector, permitindo uma análise rápida e eficiente através de dashboards personalizados no Grafana.
+
+### Requisitos
+
+Python 3.x - Versão 3.7 ou superior recomendada para garantir compatibilidade com as bibliotecas utilizadas.
+
+Bibliotecas Python:
+Playwright: Para realizar web scraping do site DownDetector.
+psycopg2: Para interagir com o banco de dados PostgreSQL.
+
+Banco de Dados PostgreSQL - Para armazenar os dados extraídos do DownDetector e poder carregar os dados no Grafana.
+
+Grafana: Para visualização dos dados extraídos. Deve ser configurado para conectar-se ao banco de dados PostgreSQL e criar painéis de visualização.
+
+
+### Web Scraping
+
+O script utiliza a biblioteca [Playwright](https://playwright.dev/) para realizar web scraping do site DownDetector. A abordagem headless é utilizada para evitar a solicitação de CAPTCHA durante a execução do script. A coleta de dados é feita das seguintes maneiras:
+
+- **Extração de Dados**: O script extrai o nome da empresa e o estado de alerta das empresas listadas com as classes CSS `danger sparkline` e `warning sparkline`.
+- **Armazenamento**: Os dados extraídos são armazenados em uma tabela PostgreSQL para posterior visualização no Grafana.
+
+
+## Uso do Banco de Dados
+
+Optei pelo uso do banco de dados por ter sido a forma mais simples que encontrei para poder carregar estes dados no Grafana, utilisei o Postgres, porem pode usar o banco de sua preferencia, bastando somente adaptar o codigo para inserção correta.
+Basta criar uma tabale no banco com o nome 'downdetector' com duas colunas:
+
+- **nome**: O nome da empresa.
+- **status**: O estado de alerta da empresa, que pode ser "danger" (crítico) ou "warning" (aviso).
+
+### Configuração do Grafana
+
+1. **Adicionar Fonte de Dados PostgreSQL**
+
+   - No Grafana, acesse **Configuration** > **Data Sources**.
+   - Clique em **Add data source** e selecione **PostgreSQL**.
+   - Preencha as informações de conexão:
+     - **Host:** `localhost:5432`
+     - **Database:** `postgres`
+     - **User:** `postgres`
+     - **Password:** `your_password`
+
+2. **Criar um Painel de Tabela**
+
+   - Crie um novo painel no **Dashboard**.
+   - Adicione uma nova consulta SQL para a tabela criada em seu banco de dados:
+
+     ```sql
+     SELECT * FROM downdetector
+     ```
+
+   - Utilize o painel de tabela para exibir os dados. Defina mapeamentos de valores para colorir as entradas com base no estado de alerta (por exemplo, vermelhos para "danger" e amarelos para "warning").
+
