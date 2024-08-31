@@ -57,8 +57,13 @@ Foi utilizado o PostgreSQL para armazenar os dados devido à sua robustez e flex
 
 ### Criar um Painel de Tabela
 
-1. Crie um novo painel no **Dashboard**.
-2. Adicione uma nova consulta SQL para a tabela `downdetector`:
+   - Crie um novo **Dashboard**.
+   - Insira uma visualização do tipo 'Table.'
+   - Adicione uma nova consulta SQL para a tabela criada em seu banco de dados:
 
-   ```sql
-   SELECT * FROM downdetector
+     ```sql
+     SELECT * FROM downdetector
+     ```
+
+   - Defina mapeamentos de valores para colorir as entradas com base no estado de alerta (por exemplo, vermelhos para "danger" e amarelos para "warning").
+
