@@ -1,9 +1,9 @@
 # Integração DownDetector x Grafana
 
 **Autor:** Murilo Scheffer  
-**Data:** 30/08/2024
-**Contato:** https://www.linkedin.com/in/muriloscheffer/
-**Git:** https://github.com/MuriloSche/downgrafana
+**Data:** 30/08/2024     
+**Contato:** https://www.linkedin.com/in/muriloscheffer/          
+**Git:** https://github.com/MuriloSche/downgrafana          
 
 ## Descrição
 
