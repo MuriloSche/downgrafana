@@ -58,6 +58,14 @@ Foi utilizado o PostgreSQL para armazenar os dados devido à sua robustez e flex
 ### Criar um Painel de Tabela
 
    - Crie um novo **Dashboard**.
+   - Adicione uma nova **Vizualização**.
+   - ![image](https://github.com/user-attachments/assets/e7b521f9-0f77-4d42-a0c8-d25d7633c97f)
+   - Selecione a Base de dados adicionada anteriormente.
+   - ![image](https://github.com/user-attachments/assets/ef4c4874-ce00-41fa-af5e-4b2d90acb0d7)
+   - Configure conforme a imagem.
+   - ![image](https://github.com/user-attachments/assets/3ebc278d-8d46-4b52-8a39-ca2036f440d5)
+
+
    - Insira uma visualização do tipo 'Table.'
    - Adicione uma nova consulta SQL para a tabela criada em seu banco de dados:
 
