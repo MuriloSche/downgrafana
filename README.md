@@ -60,17 +60,16 @@ Foi utilizado o PostgreSQL para armazenar os dados devido à sua robustez e flex
    - Selecione a Base de dados adicionada anteriormente.
    ![image](https://github.com/user-attachments/assets/ef4c4874-ce00-41fa-af5e-4b2d90acb0d7)
    - Configure conforme a imagem.
-   ![image](https://github.com/user-attachments/assets/3ebc278d-8d46-4b52-8a39-ca2036f440d5)
+   ![image](https://github.com/user-attachments/assets/9147be75-06c2-4596-bef6-95c7eccce20d)
+   ![image](https://github.com/user-attachments/assets/1597a32c-3eff-401b-8b38-bf6ce46b9800)
+   ![image](https://github.com/user-attachments/assets/d8def099-1c49-4bbe-b55a-1238813e5770)
 
 
-   - Insira uma visualização do tipo 'Table.'
-   - Adicione uma nova consulta SQL para a tabela criada em seu banco de dados:
+### Aqui são somente ideias, personalize como preferir. 
+### Resultado Final
+![image](https://github.com/user-attachments/assets/53871788-3a57-445a-9937-c54d2737f837)
 
-     ```sql
-     SELECT * FROM downdetector
-     ```
 
-   - Defina mapeamentos de valores para colorir as entradas com base no estado de alerta (por exemplo, vermelhos para "danger" e amarelos para "warning").
 
      
 ## Agendamento de Execução
