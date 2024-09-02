@@ -6,6 +6,11 @@ Data: 30/08/2024
 Contato: https://www.linkedin.com/in/muriloscheffer/
 Git: https://github.com/MuriloSche/downgrafana
 
+Aviso de Responsabilidade: Este código é disponibilizado para fins educacionais e de uso responsável. Ao utilizá-lo, 
+é fundamental que você tome precauções para não sobrecarregar o site DownDetector ou infringir seus termos de uso.
+Não assumo qualquer responsabilidade por danos, sobrecargas, bloqueios ou qualquer outro problema que possa surgir do uso inadequado deste código. 
+Por favor, utilize-o com consciência e respeito aos recursos e limites de requisições do site.
+
 Descrição: Este script utiliza a biblioteca Playwright para extrair dados do site DownDetector e armazená-los em um banco de dados PostgreSQL.
 Os dados extraídos incluem o nome da empresa e o estado de alerta (danger ou warning). O script limpa a tabela do banco de dados antes de inserir novos dados.
 
