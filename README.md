@@ -5,6 +5,9 @@
 **Contato:** https://www.linkedin.com/in/muriloscheffer/          
 **Git:** https://github.com/MuriloSche/downgrafana          
 
+**Aviso de Responsabilidade:** 
+Este código é disponibilizado para fins educacionais e de uso responsável. Ao utilizá-lo, é fundamental que você tome precauções para não sobrecarregar o site DownDetector ou infringir seus termos de uso. Não assumo qualquer responsabilidade por danos, sobrecargas, bloqueios ou qualquer outro problema que possa surgir do uso inadequado deste código. Por favor, utilize-o com consciência e respeito aos recursos e limites de requisições do site.
+
 ## Descrição
 
 O projeto **Integração DownDetector x Grafana** visa integrar dados de estado de alerta de empresas do site [DownDetector](https://downdetector.com.br/) com o painel de visualização de dados do [Grafana](https://grafana.com/). Utilizando técnicas de web scraping, o script extrai informações sobre o status de alerta (danger ou warning) e armazena esses dados em um banco de dados PostgreSQL. O Grafana é então configurado para visualizar esses dados em um painel, proporcionando uma visão clara e organizada do estado de alerta atual.
@@ -22,12 +25,6 @@ Fornecer uma solução automatizada para monitorar e visualizar o estado de aler
 - **psycopg2**: Biblioteca para interagir com o banco de dados PostgreSQL.
 - **PostgreSQL**: Banco de dados para armazenar os dados extraídos do DownDetector.
 - **Grafana**: Para visualização dos dados extraídos. Deve ser configurado para conectar-se ao banco de dados PostgreSQL e criar painéis de visualização.
-
-### Hardware/Infraestrutura
-
-- **Servidor para PostgreSQL**: Pode ser local ou remoto.
-- **Servidor para Grafana**: Pode ser local ou remoto.
-- **Máquina para Execução do Script**: Onde o script Python será executado. Pode ser uma máquina local ou um servidor na nuvem.
 
 ## Web Scraping
 
@@ -75,3 +72,6 @@ Foi utilizado o PostgreSQL para armazenar os dados devido à sua robustez e flex
 
    - Defina mapeamentos de valores para colorir as entradas com base no estado de alerta (por exemplo, vermelhos para "danger" e amarelos para "warning").
 
+     
+## Agendamento de Execução
+Para garantir a atualização contínua dos dados, o script deve ser executado automaticamente em intervalos regulares. Recomenda-se o uso de uma ferramenta de agendamento como cron no Linux ou o Agendador de Tarefas no Windows. A frequência recomendada é de 1 hora ou mais para evitar sobrecarregar o site DownDetector com requisições excessivas.
