@@ -22,7 +22,10 @@ Fornecer uma solução automatizada para monitorar e visualizar o estado de aler
 
 - **Python 3.x**: Versão 3.7 ou superior recomendada para garantir compatibilidade com as bibliotecas utilizadas.
 - **Playwright**: Biblioteca para realizar web scraping do site DownDetector.
+     `pip install playwright`
+     `playwright install`
 - **psycopg2**: Biblioteca para interagir com o banco de dados PostgreSQL.
+     `pip install psycopg2`
 - **PostgreSQL**: Banco de dados para armazenar os dados extraídos do DownDetector.
 - **Grafana**: Para visualização dos dados extraídos. Deve ser configurado para conectar-se ao banco de dados PostgreSQL e criar painéis de visualização.
 
